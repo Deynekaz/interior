@@ -112,6 +112,23 @@ td.num { font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-num
 .status { border-left:3px solid var(--warn); padding:.2rem 0 .2rem 1.2rem; margin:1.5rem 0; }
 .status p { font-size:.94rem; }
 footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); font-size:.85rem; color:var(--faint); }
+
+.tablewrap{overflow-x:auto;margin:0 0 2.5rem;border:1px solid var(--line);border-radius:12px}
+table.score{border-collapse:collapse;width:100%;font-size:.82rem;min-width:1100px}
+table.score th[scope=col]{position:sticky;top:0;background:var(--raised);z-index:2;text-align:left;
+  font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:.6rem .5rem;
+  border-bottom:1px solid var(--line);font-weight:500}
+table.score th[scope=row]{text-align:left;padding:.55rem .6rem;font-weight:500;background:var(--raised);
+  position:sticky;left:0;z-index:1;min-width:190px;border-right:1px solid var(--line-soft)}
+table.score th[scope=row] .pr{display:block;font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--muted);font-weight:400}
+table.score td{padding:.55rem .5rem;border-bottom:1px solid var(--line-soft);vertical-align:top}
+table.score tbody tr:hover td,table.score tbody tr:hover th[scope=row]{background:var(--sunk)}
+table.score .num{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-weight:500;text-align:right;white-space:nowrap}
+.p1,.ph,.p0{font-family:"IBM Plex Mono",monospace;font-size:.68rem;padding:.05rem .3rem;border-radius:4px;margin-left:.2rem;white-space:nowrap}
+.p1{background:rgba(90,140,90,.18);color:var(--ok)}
+.ph{background:rgba(150,140,90,.18);color:var(--muted)}
+.p0{background:transparent;color:var(--faint)}
 </style>
 
 <div class="wrap">
@@ -125,6 +142,423 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
 <p style="color:var(--muted); margin-bottom:1.5rem">Порядок — по цене, от дешёвой к дорогой. Рейтинга нет: номер у карточки — просто её место в списке.
 Всё, что в карточке написано, взято с действующей страницы продавца; где он чего-то не публикует, стоит «не указано», а не моя догадка.</p>
 <p style="color:var(--muted); margin:-1rem 0 1.5rem"><b>Про размер спального места.</b> Всё, что шире 130 см и длиннее 195 см, считается одинаково пригодным — по ширине разница между 140 и 160 на пригодность уже не влияет, и в разборах она не упоминается. А вот длина короче 195 см отмечена в «что проверить»: таких моделей девять.</p>
+<h2>Сводная таблица и баллы</h2>
+<p style="color:var(--muted); margin-bottom:.8rem">Двадцать восемь моделей, отсортированы по сумме баллов. Максимум, который можно набрать по этой шкале, — <b>6,5</b>; набранный максимум — <b>6</b>.
+Прочерк означает, что продавец параметр не публикует, и балл за него не начисляется.</p>
+<div class="method" style="margin-bottom:1.2rem">
+  <h4>Как считались баллы</h4>
+  <p><b>Спальное место.</b> 1 балл за 140 × 200 и больше; 0,5 за промежуток от 135 × 195 до 140 × 200; ниже — 0.<br>
+  <b>Хранение.</b> 1 балл, если короб или ящик есть; нет или нет данных — 0.<br>
+  <b>Обивка.</b> 0,5 балла за плоское плотное плетение — гладкая, структурная, тканая, меланжевая, фактурная: за такую не цепляется коготь.
+  Букле, велюр, шенилл, тедди и рубчик — 0: у первых петля вытягивается, у остальных ворс залоснивается.<br>
+  <b>Чехлы и пропитка.</b> 1 балл, если чехлы снимаются <i>или</i> ткань с грязе- и водоотталкивающей обработкой. Достаточно одного из двух.<br>
+  <b>Пена.</b> Общепринятая мерка для сиденья: от 30 кг/м³ — плотность для ежедневного использования, это 1 балл; 25–29 — 0,5; ниже 25 — 0.
+  Где продавец даёт вилку, я брал нижнюю границу.<br>
+  <b>Мартиндейл.</b> От 40 000 циклов — уровень «интенсивное бытовое использование», 1 балл; 25 000–39 999 — 0,5; ниже — 0.<br>
+  <b>Каркас.</b> 1 балл за массив, фанеру или металл; 0,5 — если к ним подмешаны ДСП, МДФ или ДВП; 0 — если каркас только из плитных материалов или не назван.</p>
+</div>
+<div class="tablewrap"><table class="score">
+<thead><tr>
+  <th scope="col">Модель</th><th scope="col">Габариты</th><th scope="col">Спальное место</th>
+  <th scope="col">Высота сиденья</th><th scope="col">Хранение</th><th scope="col">Обивка</th>
+  <th scope="col">Съёмные чехлы</th><th scope="col">Антигрязь</th><th scope="col">Пена</th>
+  <th scope="col">Мартиндейл</th><th scope="col">Каркас</th><th scope="col">Оценка</th>
+</tr></thead>
+<tbody>
+<tr>
+  <th scope="row">EVEREST<span class="pr">€ 999</span></th>
+  <td class="num">318 × 180 × 90</td>
+  <td class="num">156 × 240 <span class="p1">1</span></td>
+  <td class="num">40</td>
+  <td>есть <span class="p1">1</span></td>
+  <td>структурная <span class="ph">0,5</span></td>
+  <td>нет</td>
+  <td>да <span class="p1">1</span></td>
+  <td class="num">30 кг/м³ <span class="p1">1</span></td>
+  <td class="num">100 000 <span class="p1">1</span></td>
+  <td>дерево и ДСП <span class="ph">0,5</span></td>
+  <td class="tot">6</td>
+</tr>
+<tr>
+  <th scope="row">RICAPO<span class="pr">€ 899,99</span></th>
+  <td class="num">266 × 125 × 90</td>
+  <td class="num">160 × 202 <span class="p1">1</span></td>
+  <td class="num">43</td>
+  <td>есть <span class="p1">1</span></td>
+  <td>шенилл <span class="p0">0</span></td>
+  <td>да</td>
+  <td>нет <span class="p1">1</span></td>
+  <td class="num">35 кг/м³ <span class="p1">1</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>— <span class="p0">0</span></td>
+  <td class="tot">4</td>
+</tr>
+<tr>
+  <th scope="row">Sklum PAOLY<span class="pr">€ 539,95</span></th>
+  <td class="num">210 × 105 × 74</td>
+  <td class="num">190 × 200 <span class="p1">1</span></td>
+  <td class="num">39</td>
+  <td>нет <span class="p0">0</span></td>
+  <td>рубчик <span class="p0">0</span></td>
+  <td>да</td>
+  <td>нет <span class="p1">1</span></td>
+  <td class="num">30 кг/м³ <span class="p1">1</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>нержавеющая сталь <span class="p1">1</span></td>
+  <td class="tot">4</td>
+</tr>
+<tr>
+  <th scope="row">Westwing Ladina<span class="pr">€ 2 399</span></th>
+  <td class="num">280 × 210 × 84</td>
+  <td class="num">180 × 200 <span class="p1">1</span></td>
+  <td class="num">43</td>
+  <td>есть <span class="p1">1</span></td>
+  <td>букле <span class="p0">0</span></td>
+  <td>нет</td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="num">30 кг/м³ <span class="p1">1</span></td>
+  <td class="num">30 000 <span class="ph">0,5</span></td>
+  <td>бук, ДВП, МДФ <span class="ph">0,5</span></td>
+  <td class="tot">4</td>
+</tr>
+<tr>
+  <th scope="row">AX Living CATEA<span class="pr">€ 974,49</span></th>
+  <td class="num">279 × 145 × 84</td>
+  <td class="num">140 × 240 <span class="p1">1</span></td>
+  <td class="num">42</td>
+  <td>есть <span class="p1">1</span></td>
+  <td>структурная <span class="ph">0,5</span></td>
+  <td>нет</td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="num">30 кг/м³ <span class="p1">1</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>— <span class="p0">0</span></td>
+  <td class="tot">3,5</td>
+</tr>
+<tr>
+  <th scope="row">Beliani NUBORG<span class="pr">€ 1 019,99</span></th>
+  <td class="num">277 × 168 × 93</td>
+  <td class="num">139 × 228 <span class="ph">0,5</span></td>
+  <td class="num">45</td>
+  <td>есть <span class="p1">1</span></td>
+  <td>шенилл <span class="p0">0</span></td>
+  <td>да</td>
+  <td>нет <span class="p1">1</span></td>
+  <td class="num">30 кг/м³ <span class="p1">1</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>— <span class="p0">0</span></td>
+  <td class="tot">3,5</td>
+</tr>
+<tr>
+  <th scope="row">Premium Interiors COMO<span class="pr">€ 1 069</span></th>
+  <td class="num">254 × 95 × 78</td>
+  <td class="num">145 × 200 <span class="p1">1</span></td>
+  <td class="num">43</td>
+  <td>есть <span class="p1">1</span></td>
+  <td>тканая <span class="ph">0,5</span></td>
+  <td>нет</td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>дерево <span class="p1">1</span></td>
+  <td class="tot">3,5</td>
+</tr>
+<tr>
+  <th scope="row">ROXELANE<span class="pr">€ 1 300</span></th>
+  <td class="num">258 × 150 × 95</td>
+  <td class="num">132 × 192 <span class="p0">0</span></td>
+  <td class="num">46</td>
+  <td>есть <span class="p1">1</span></td>
+  <td>меланж <span class="ph">0,5</span></td>
+  <td>нет</td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="num">25 кг/м³ <span class="ph">0,5</span></td>
+  <td class="num">50 000 <span class="p1">1</span></td>
+  <td>дерево и ДСП <span class="ph">0,5</span></td>
+  <td class="tot">3,5</td>
+</tr>
+<tr>
+  <th scope="row">Tasha — букле<span class="pr">€ 1 449</span></th>
+  <td class="num">235 × 100 × 83</td>
+  <td class="num">150 × 200 <span class="p1">1</span></td>
+  <td class="num">—</td>
+  <td>есть <span class="p1">1</span></td>
+  <td>букле <span class="p0">0</span></td>
+  <td>нет</td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="num">20 кг/м³ <span class="p0">0</span></td>
+  <td class="num">50 000 <span class="p1">1</span></td>
+  <td>массив, фанера, ДСП <span class="ph">0,5</span></td>
+  <td class="tot">3,5</td>
+</tr>
+<tr>
+  <th scope="row">Tasha — велюр<span class="pr">€ 1 449</span></th>
+  <td class="num">235 × 100 × 83</td>
+  <td class="num">150 × 200 <span class="p1">1</span></td>
+  <td class="num">—</td>
+  <td>есть <span class="p1">1</span></td>
+  <td>велюр <span class="p0">0</span></td>
+  <td>нет</td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="num">20 кг/м³ <span class="p0">0</span></td>
+  <td class="num">50 000 <span class="p1">1</span></td>
+  <td>массив, фанера, ДСП <span class="ph">0,5</span></td>
+  <td class="tot">3,5</td>
+</tr>
+<tr>
+  <th scope="row">Carnos<span class="pr">€ 1 219,99</span></th>
+  <td class="num">257 × 105 × 82</td>
+  <td class="num">150 × 200 <span class="p1">1</span></td>
+  <td class="num">42</td>
+  <td>есть <span class="p1">1</span></td>
+  <td>шенилл <span class="p0">0</span></td>
+  <td>нет</td>
+  <td>да <span class="p1">1</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>— <span class="p0">0</span></td>
+  <td class="tot">3</td>
+</tr>
+<tr>
+  <th scope="row">DENISE<span class="pr">€ 1 300</span></th>
+  <td class="num">258 × 160 × 83</td>
+  <td class="num">132 × 202 <span class="p0">0</span></td>
+  <td class="num">42</td>
+  <td>есть <span class="p1">1</span></td>
+  <td>структурная <span class="ph">0,5</span></td>
+  <td>нет</td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="num">30 кг/м³ <span class="p1">1</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>дерево и ДСП <span class="ph">0,5</span></td>
+  <td class="tot">3</td>
+</tr>
+<tr>
+  <th scope="row">MONACO<span class="pr">€ 649</span></th>
+  <td class="num">277 / 307 × 158 × 96</td>
+  <td class="num">140 × 190 <span class="p0">0</span></td>
+  <td class="num">48</td>
+  <td>есть <span class="p1">1</span></td>
+  <td>гладкая <span class="ph">0,5</span></td>
+  <td>нет</td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="num">30 кг/м³ <span class="p1">1</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>дерево и ДСП <span class="ph">0,5</span></td>
+  <td class="tot">3</td>
+</tr>
+<tr>
+  <th scope="row">Sklum TAMPERE<span class="pr">€ 879,95</span></th>
+  <td class="num">237 × 98 × 87</td>
+  <td class="num">150 × 237 <span class="p1">1</span></td>
+  <td class="num">45</td>
+  <td>нет <span class="p0">0</span></td>
+  <td>рубчик <span class="p0">0</span></td>
+  <td>нет</td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="num">33 кг/м³ <span class="p1">1</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>эвкалипт и фанера <span class="p1">1</span></td>
+  <td class="tot">3</td>
+</tr>
+<tr>
+  <th scope="row">Westwing Cucita<span class="pr">€ 2 399</span></th>
+  <td class="num">274 × 164 × 88</td>
+  <td class="num">133 × 195 <span class="p0">0</span></td>
+  <td class="num">55</td>
+  <td>нет <span class="p0">0</span></td>
+  <td>— <span class="p0">0</span></td>
+  <td>нет</td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="num">30 кг/м³ <span class="p1">1</span></td>
+  <td class="num">40 000 <span class="p1">1</span></td>
+  <td>массив сосны <span class="p1">1</span></td>
+  <td class="tot">3</td>
+</tr>
+<tr>
+  <th scope="row">ISSORO express<span class="pr">€ 1 299,99</span></th>
+  <td class="num">215 × 105 × 90</td>
+  <td class="num">140 × 192 <span class="p0">0</span></td>
+  <td class="num">54</td>
+  <td>есть <span class="p1">1</span></td>
+  <td>тедди <span class="p0">0</span></td>
+  <td>нет</td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="num">25 кг/м³ <span class="ph">0,5</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>дерево <span class="p1">1</span></td>
+  <td class="tot">2,5</td>
+</tr>
+<tr>
+  <th scope="row">Kave Home Marela 236<span class="pr">€ 1 695</span></th>
+  <td class="num">236 × 170 × 87</td>
+  <td class="num">140 × 192 <span class="p0">0</span></td>
+  <td class="num">42</td>
+  <td>нет <span class="p0">0</span></td>
+  <td>шенилл <span class="p0">0</span></td>
+  <td>да</td>
+  <td>да <span class="p1">1</span></td>
+  <td class="num">28 кг/м³ <span class="ph">0,5</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>дерево FSC <span class="p1">1</span></td>
+  <td class="tot">2,5</td>
+</tr>
+<tr>
+  <th scope="row">POGNIA express<span class="pr">€ 1 329,99</span></th>
+  <td class="num">216 × 100 × 80</td>
+  <td class="num">140 × 190 <span class="p0">0</span></td>
+  <td class="num">53</td>
+  <td>нет <span class="p0">0</span></td>
+  <td>фактурная <span class="ph">0,5</span></td>
+  <td>нет</td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="num">30 кг/м³ <span class="p1">1</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>дерево и металл <span class="p1">1</span></td>
+  <td class="tot">2,5</td>
+</tr>
+<tr>
+  <th scope="row">Sklum OLEGUER<span class="pr">€ 1 019,95</span></th>
+  <td class="num">215 × 85,5 × 87,5</td>
+  <td class="num">150 × 180 <span class="p0">0</span></td>
+  <td class="num">44</td>
+  <td>нет <span class="p0">0</span></td>
+  <td>гладкая <span class="ph">0,5</span></td>
+  <td>нет</td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="num">35 кг/м³ <span class="p1">1</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>фанера и эвкалипт <span class="p1">1</span></td>
+  <td class="tot">2,5</td>
+</tr>
+<tr>
+  <th scope="row">Westwing Luna<span class="pr">€ 2 599</span></th>
+  <td class="num">270 × 184 × 86</td>
+  <td class="num">140 × 200 <span class="p1">1</span></td>
+  <td class="num">47</td>
+  <td>нет <span class="p0">0</span></td>
+  <td>— <span class="p0">0</span></td>
+  <td>нет</td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="num">21 кг/м³ <span class="p0">0</span></td>
+  <td class="num">80 000 <span class="p1">1</span></td>
+  <td>массив бука, фанера, ДВП <span class="ph">0,5</span></td>
+  <td class="tot">2,5</td>
+</tr>
+<tr>
+  <th scope="row">Beliani KARILA<span class="pr">€ 919,99</span></th>
+  <td class="num">250 × 150 × 85</td>
+  <td class="num">130 × 204 <span class="p0">0</span></td>
+  <td class="num">45</td>
+  <td>есть <span class="p1">1</span></td>
+  <td>— <span class="p0">0</span></td>
+  <td>нет</td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="num">22 кг/м³ <span class="p0">0</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>эвкалипт и фанера <span class="p1">1</span></td>
+  <td class="tot">2</td>
+</tr>
+<tr>
+  <th scope="row">CATONO<span class="pr">€ 649,99</span></th>
+  <td class="num">240 × 111 × 87</td>
+  <td class="num">162 × 184 <span class="p0">0</span></td>
+  <td class="num">40</td>
+  <td>нет <span class="p0">0</span></td>
+  <td>букле <span class="p0">0</span></td>
+  <td>да</td>
+  <td>нет <span class="p1">1</span></td>
+  <td class="num">30 кг/м³ <span class="p1">1</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>— <span class="p0">0</span></td>
+  <td class="tot">2</td>
+</tr>
+<tr>
+  <th scope="row">Г-образная с коробом<span class="pr">€ 560,99</span></th>
+  <td class="num">219,5 × 142,5 × 83</td>
+  <td class="num">120 × 190 <span class="p0">0</span></td>
+  <td class="num">—</td>
+  <td>есть <span class="p1">1</span></td>
+  <td>— <span class="p0">0</span></td>
+  <td>нет</td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>железо и массив <span class="p1">1</span></td>
+  <td class="tot">2</td>
+</tr>
+<tr>
+  <th scope="row">LEON<span class="pr">€ 1 719</span></th>
+  <td class="num">239 × 148 × 81</td>
+  <td class="num">135 × 202 <span class="ph">0,5</span></td>
+  <td class="num">49</td>
+  <td>есть <span class="p1">1</span></td>
+  <td>велюр <span class="p0">0</span></td>
+  <td>нет</td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>ДВП <span class="p0">0</span></td>
+  <td class="tot">1,5</td>
+</tr>
+<tr>
+  <th scope="row">vtwonen Night &amp; Day<span class="pr">€ 1 349</span></th>
+  <td class="num">239 × 107 × 85</td>
+  <td class="num">145 × 190 <span class="p0">0</span></td>
+  <td class="num">47</td>
+  <td>есть <span class="p1">1</span></td>
+  <td>меланж <span class="ph">0,5</span></td>
+  <td>нет</td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>— <span class="p0">0</span></td>
+  <td class="tot">1,5</td>
+</tr>
+<tr>
+  <th scope="row">Premium Interiors JUNE<span class="pr">€ 1 359</span></th>
+  <td class="num">236 × 100 × 80</td>
+  <td class="num">160 × 190 <span class="p0">0</span></td>
+  <td class="num">45</td>
+  <td>нет <span class="p0">0</span></td>
+  <td>велюр <span class="p0">0</span></td>
+  <td>нет</td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>дерево <span class="p1">1</span></td>
+  <td class="tot">1</td>
+</tr>
+<tr>
+  <th scope="row">Sia Home YUMA<span class="pr">€ 1 279</span></th>
+  <td class="num">240 × 97 × 73</td>
+  <td class="num">140 × 190 <span class="p0">0</span></td>
+  <td class="num">43,5</td>
+  <td>нет <span class="p0">0</span></td>
+  <td>велюр <span class="p0">0</span></td>
+  <td>нет</td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="num">28 кг/м³ <span class="ph">0,5</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>— <span class="p0">0</span></td>
+  <td class="tot">0,5</td>
+</tr>
+<tr>
+  <th scope="row">Furni MERLOT<span class="pr">€ 1 819,93</span></th>
+  <td class="num">282 × 112 × 70</td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td class="num">—</td>
+  <td>нет <span class="p0">0</span></td>
+  <td>— <span class="p0">0</span></td>
+  <td>нет</td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>— <span class="p0">0</span></td>
+  <td class="tot">0</td>
+</tr>
+</tbody></table></div>
+
 <article class="card">
   <div class="card-head">
     <span class="rank">1</span>
@@ -144,7 +578,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
       <dt>Спальное место</dt><dd><b>190 × 200 см</b><br><span class="sub">снято вами с фотографии на карточке; Sklum это число не публикует</span></dd>
       <dt>Сиденье</dt><dd>высота 39 см, глубина 72 см<br><span class="sub">высота заметно ниже обычных 45–55, глубина выше обычных 50–70; глубина снята вами с фотографии</span></dd>
       <dt>Съёмные чехлы</dt><dd><b>да, на молниях</b> — спинка, подлокотники и сам каркас обтянуты одной съёмной тканью</dd>
-      <dt>Хранение</dt><dd><span class="na">не указано</span></dd>
+      <dt>Хранение</dt><dd>нет</dd>
       <dt>Что пишет продавец</dt><dd>Ткань 100% полиэстер с вельветовой отделкой в рубчик. <b>Каркас нержавеющая сталь.</b>
       Пена сиденья <b>30 кг/м³</b>. Нагрузка 220 кг, вес 44 кг, подлокотник 59 см, ножки 3 см.
       <b>Механизм гармошка (accordion pull-out)</b>: спинка и сиденье раскладываются вперёд в сплошное мягкое ложе за секунды. Поставляется <b>вакуумно упакованным в одной коробке 109 × 60 × 48 см</b>.</dd>
@@ -194,35 +628,6 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
   <div class="card-head">
     <span class="rank">3</span>
     <div>
-      <p class="label">Leen Bakker · Dorel Home</p>
-      <h3>ALLIE — Crème</h3>
-      <p class="shop"><span class="price">€ 599,99</span></p>
-    </div>
-  </div>
-  <div class="card-body">
-    <div class="media">
-      <a href="https://www.leenbakker.nl/banken-en-stoelen/banken/slaapbanken/allie-3-zits-slaapbank-in-cremekleurige-stof" target="_blank" rel="noopener"><img src="data:image/jpeg;base64,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" alt="ALLIE — Crème"></a>
-      <a class="buy" href="https://www.leenbakker.nl/banken-en-stoelen/banken/slaapbanken/allie-3-zits-slaapbank-in-cremekleurige-stof" target="_blank" rel="noopener">Открыть карточку товара →</a>
-    </div>
-    <dl class="specs">
-      <dt>Габариты</dt><dd>225 × 91 × 81<span class="sub"> Ш × Г × В, см</span></dd>
-      <dt>Спальное место</dt><dd><span class="na">не указано</span><br><span class="sub">Leen Bakker не публикует размер спального места ни у одной модели</span></dd>
-      <dt>Сиденье</dt><dd>высота <span class="na">не указано</span>, глубина 60 см</dd>
-      <dt>Съёмные чехлы</dt><dd><span class="na">не указано</span></dd>
-      <dt>Хранение</dt><dd><span class="na">не указано</span></dd>
-      <dt>Что пишет продавец</dt><dd>Клик-кляк с волновым основанием, FSC. Ширина сиденья 190 см, глубина 60 см.</dd>
-    </dl>
-  </div>
-
-  <div class="prosecons">
-    <div class="pros"><h4>Чем хорош</h4><p>Гарантия <b>3 года</b> — вдвое больше стандартных двух у большинства. Продаёт Dorel Home через Leen Bakker, у карточки есть поле износостойкости обивки.</p></div>
-    <div class="cons"><h4>Что проверить</h4><p>Хранения нет вовсе — единственная в списке без короба и без ящика. Размер спального места Leen Bakker не публикует ни у одной модели, здесь тоже. Плотность пены и Мартиндейл не указаны. Нагрузка до 120 кг на место.</p></div>
-  </div>
-</article>
-<article class="card">
-  <div class="card-head">
-    <span class="rank">4</span>
-    <div>
       <p class="label">Bobochic</p>
       <h3>MONACO — Beige, гладкая ткань, угловой обратимый</h3>
       <p class="shop"><span class="price">€ 649</span> <span class="pricenote">цена «от», зависит от ткани</span></p>
@@ -250,7 +655,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
 </article>
 <article class="card">
   <div class="card-head">
-    <span class="rank">5</span>
+    <span class="rank">4</span>
     <div>
       <p class="label">Vente-Unique</p>
       <h3>CATONO — Beige, букле</h3>
@@ -279,7 +684,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
 </article>
 <article class="card">
   <div class="card-head">
-    <span class="rank">6</span>
+    <span class="rank">5</span>
     <div>
       <p class="label">Sklum</p>
       <h3>Sklum TAMPERE — вельвет в рубчик, беж-крем</h3>
@@ -307,7 +712,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
 </article>
 <article class="card">
   <div class="card-head">
-    <span class="rank">7</span>
+    <span class="rank">6</span>
     <div>
       <p class="label">Vente-Unique</p>
       <h3>RICAPO — Beige, шенилл</h3>
@@ -336,7 +741,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
 </article>
 <article class="card">
   <div class="card-head">
-    <span class="rank">8</span>
+    <span class="rank">7</span>
     <div>
       <p class="label">Beliani</p>
       <h3>Beliani KARILA — Taupe, угловой левый, с коробом</h3>
@@ -367,7 +772,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
 </article>
 <article class="card">
   <div class="card-head">
-    <span class="rank">9</span>
+    <span class="rank">8</span>
     <div>
       <p class="label">Vente-Unique</p>
       <h3>AX Living CATEA — Beige, угловой 279 см</h3>
@@ -396,7 +801,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
 </article>
 <article class="card">
   <div class="card-head">
-    <span class="rank">10</span>
+    <span class="rank">9</span>
     <div>
       <p class="label">Bobochic</p>
       <h3>EVEREST — Taupe / Beige, структурная ткань, угловой</h3>
@@ -425,7 +830,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
 </article>
 <article class="card">
   <div class="card-head">
-    <span class="rank">11</span>
+    <span class="rank">10</span>
     <div>
       <p class="label">vtwonen</p>
       <h3>Premium Interiors COMO — тканое полотно, продавец называет цвет bruin</h3>
@@ -454,7 +859,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
 </article>
 <article class="card">
   <div class="card-head">
-    <span class="rank">12</span>
+    <span class="rank">11</span>
     <div>
       <p class="label">vtwonen</p>
       <h3>Sia Home YUMA — текстурный велюр, таупе</h3>
@@ -470,7 +875,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
       <dt>Габариты</dt><dd>240 × 97 × 73<span class="sub"> Ш × Г × В, см</span></dd>
       <dt>Спальное место</dt><dd><b>140 × 190 см</b><br><span class="sub">продавец пишет это в описании, а не в таблице размеров</span></dd>
       <dt>Сиденье</dt><dd>высота 43,5 см, глубина 64 см</dd>
-      <dt>Съёмные чехлы</dt><dd>да, съёмный</dd>
+      <dt>Съёмные чехлы</dt><dd>нет<br><span class="sub">продавец пишет «afneembare hoes: nee»</span></dd>
       <dt>Хранение</dt><dd><span class="na">не указано</span></dd>
       <dt>Что пишет продавец</dt><dd>Четыре места, высота сиденья 43,5 см — низкая. <b>Чехол съёмный</b>, это единственная из шести с таким. В комплекте декоративные подушки. Скидка 59% от прежней цены 3.099.</dd>
     </dl>
@@ -483,7 +888,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
 </article>
 <article class="card">
   <div class="card-head">
-    <span class="rank">13</span>
+    <span class="rank">12</span>
     <div>
       <p class="label">Vente-Unique</p>
       <h3>ISSORO express — тедди, ломаный белый</h3>
@@ -512,7 +917,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
 </article>
 <article class="card">
   <div class="card-head">
-    <span class="rank">14</span>
+    <span class="rank">13</span>
     <div>
       <p class="label">Bobochic</p>
       <h3>ROXELANE — Taupe, меланж, угловой с коробом</h3>
@@ -541,7 +946,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
 </article>
 <article class="card">
   <div class="card-head">
-    <span class="rank">15</span>
+    <span class="rank">14</span>
     <div>
       <p class="label">Bobochic</p>
       <h3>DENISE — Taupe / Beige, структурная ткань, угловой</h3>
@@ -570,7 +975,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
 </article>
 <article class="card">
   <div class="card-head">
-    <span class="rank">16</span>
+    <span class="rank">15</span>
     <div>
       <p class="label">Vente-Unique</p>
       <h3>POGNIA express — Beige, фактурная ткань</h3>
@@ -599,7 +1004,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
 </article>
 <article class="card">
   <div class="card-head">
-    <span class="rank">17</span>
+    <span class="rank">16</span>
     <div>
       <p class="label">Sohome</p>
       <h3>vtwonen Night &amp; Day — Naturel, меланжевая ткань</h3>
@@ -628,7 +1033,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
 </article>
 <article class="card">
   <div class="card-head">
-    <span class="rank">18</span>
+    <span class="rank">17</span>
     <div>
       <p class="label">vtwonen</p>
       <h3>Premium Interiors JUNE — стёганый велюр, бежевый</h3>
@@ -657,7 +1062,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
 </article>
 <article class="card">
   <div class="card-head">
-    <span class="rank">19</span>
+    <span class="rank">18</span>
     <div>
       <p class="label">Westwing</p>
       <h3>Westwing Collection Tasha — Bouclé taupe</h3>
@@ -686,7 +1091,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
 </article>
 <article class="card">
   <div class="card-head">
-    <span class="rank">20</span>
+    <span class="rank">19</span>
     <div>
       <p class="label">Westwing</p>
       <h3>Westwing Collection Tasha — Froca Gucci, светло-бежевый велюр</h3>
@@ -703,7 +1108,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
       <dt>Спальное место</dt><dd>150 × 200 см</dd>
       <dt>Сиденье</dt><dd>глубина 57 см с подушкой, 81 без<br><span class="sub">высоту продавец даёт как 57 см, но подлокотник у него же 55 — цифры спорят, надо мерить</span></dd>
       <dt>Съёмные чехлы</dt><dd><span class="na">не указано</span>; две съёмные спинные подушки</dd>
-      <dt>Хранение</dt><dd><span class="na">не указано</span></dd>
+      <dt>Хранение</dt><dd>отсек для спинных подушек</dd>
       <dt>Что пишет продавец</dt><dd>Та же конструкция, ткань велюр вместо букле: к когтям устойчивее, но заметнее залоснивается. Мартиндейл 50 000, пена CertiPUR.</dd>
     </dl>
   </div>
@@ -715,7 +1120,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
 </article>
 <article class="card">
   <div class="card-head">
-    <span class="rank">21</span>
+    <span class="rank">20</span>
     <div>
       <p class="label">Sklum</p>
       <h3>Sklum OLEGUER — гладкая ткань, кремово-бежевый</h3>
@@ -743,7 +1148,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
 </article>
 <article class="card">
   <div class="card-head">
-    <span class="rank">22</span>
+    <span class="rank">21</span>
     <div>
       <p class="label">Beliani</p>
       <h3>Beliani NUBORG — шенилл, светло-бежевый, угловой левый</h3>
@@ -771,7 +1176,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
 </article>
 <article class="card">
   <div class="card-head">
-    <span class="rank">23</span>
+    <span class="rank">22</span>
     <div>
       <p class="label">Home24</p>
       <h3>Carnos — бежевый, гидрофобный шенилл</h3>
@@ -788,7 +1193,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
       <dt>Спальное место</dt><dd>150 × 200 см</dd>
       <dt>Сиденье</dt><dd>высота 42 см, глубина 60 см</dd>
       <dt>Съёмные чехлы</dt><dd><span class="na">не указано</span></dd>
-      <dt>Хранение</dt><dd><span class="na">не указано</span></dd>
+      <dt>Хранение</dt><dd>есть</dd>
       <dt>Что пишет продавец</dt><dd><b>Ткань гидрофобная</b> — так её описывает продавец. Механизм выдвижной, волновая пружина, наполнение ПУ-пена. Ножки 2 см, чёрные. Тот же диван продаёт Vente-Unique в светло-коричневом по той же цене — там характеристики полнее.</dd>
     </dl>
   </div>
@@ -799,7 +1204,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
 </article>
 <article class="card">
   <div class="card-head">
-    <span class="rank">24</span>
+    <span class="rank">23</span>
     <div>
       <p class="label">Sohome</p>
       <h3>Kave Home Marela 236 — Beige</h3>
@@ -827,7 +1232,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
   </div>
 </article><article class="card">
   <div class="card-head">
-    <span class="rank">25</span>
+    <span class="rank">24</span>
     <div>
       <p class="label">Vente-Unique</p>
       <h3>LEON — тёмно-бежевый велюр, угловой левый</h3>
@@ -844,7 +1249,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
       <dt>Спальное место</dt><dd>135 × 202 см</dd>
       <dt>Сиденье</dt><dd>высота 49 см, глубина 65 см</dd>
       <dt>Съёмные чехлы</dt><dd><span class="na">не указано</span></dd>
-      <dt>Хранение</dt><dd><span class="na">не указано</span></dd>
+      <dt>Хранение</dt><dd>есть</dd>
       <dt>Что пишет продавец</dt><dd>Велюр, цвет продавец называет тёмно-бежевым. Механизм выдвижной. <b>Ножки 13 см.</b> Каркас ДВП.</dd>
     </dl>
   </div>
@@ -855,7 +1260,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
 </article>
 <article class="card">
   <div class="card-head">
-    <span class="rank">26</span>
+    <span class="rank">25</span>
     <div>
       <p class="label">furni.io</p>
       <h3>Furni MERLOT — модульный, 3 места, высокие подлокотники</h3>
@@ -872,7 +1277,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
       <dt>Спальное место</dt><dd><span class="na">не указано</span><br><span class="sub">продавец не пишет про спальную функцию вообще; то, что диван раскладывается, <b>подтвердили вы по фотографиям на карточке</b></span></dd>
       <dt>Сиденье</dt><dd><span class="na">не указано</span></dd>
       <dt>Съёмные чехлы</dt><dd><span class="na">не указано</span></dd>
-      <dt>Хранение</dt><dd><span class="na">не указано</span></dd>
+      <dt>Хранение</dt><dd>нет</dd>
       <dt>Что пишет продавец</dt><dd>Модульный: конфигурация собирается из отдельных блоков, их можно докупать и переставлять.
       Наполнение — <b>пена HR</b>, продавец называет её экологичной. Гарантия 2 года. Доставка по ЕС бесплатная, 30 дней на возврат.
       Бесплатные образцы ткани.</dd>
@@ -890,7 +1295,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
 </article>
 <article class="card">
   <div class="card-head">
-    <span class="rank">27</span>
+    <span class="rank">26</span>
     <div>
       <p class="label">Westwing</p>
       <h3>Westwing Collection Ladina — букле таупе, угловой, с коробом</h3>
@@ -918,7 +1323,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
 </article>
 <article class="card">
   <div class="card-head">
-    <span class="rank">28</span>
+    <span class="rank">27</span>
     <div>
       <p class="label">Westwing</p>
       <h3>Westwing Collection Cucita — бежевый, угловой, с матрасом</h3>
@@ -935,7 +1340,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
       <dt>Спальное место</dt><dd>133 × 195 см</dd>
       <dt>Сиденье</dt><dd>высота 55 см, глубина 55 см<br><span class="sub">без подушек 63 см; у углового модуля 120 см</span></dd>
       <dt>Съёмные чехлы</dt><dd><span class="na">не указано</span></dd>
-      <dt>Хранение</dt><dd><span class="na">не указано</span></dd>
+      <dt>Хранение</dt><dd>нет</dd>
       <dt>Что пишет продавец</dt><dd>Цвет beige. <b>Мартиндейл 40 000</b>, пена 30 кг/м³, <b>каркас массив сосны</b>. Идёт с матрасом.</dd>
     </dl>
   </div>
@@ -946,7 +1351,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
 </article>
 <article class="card">
   <div class="card-head">
-    <span class="rank">29</span>
+    <span class="rank">28</span>
     <div>
       <p class="label">Westwing</p>
       <h3>Westwing Collection Luna — nougat, угловой, металлические ножки</h3>
@@ -963,7 +1368,7 @@ footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); 
       <dt>Спальное место</dt><dd>140 × 200 см</dd>
       <dt>Сиденье</dt><dd>высота 47 см, глубина 56 см</dd>
       <dt>Съёмные чехлы</dt><dd><span class="na">не указано</span></dd>
-      <dt>Хранение</dt><dd><span class="na">не указано</span></dd>
+      <dt>Хранение</dt><dd>нет</dd>
       <dt>Что пишет продавец</dt><dd>Цвет nougat. <b>Мартиндейл 80 000.</b> Пена на пружинах Nosag, плотность 21 кг/м³. Каркас массив бука, фанера и ДВП. <b>Ножки 14 см, матовый чёрный металл.</b> Подлокотник 66 см. Нагрузка 150 кг на модуль.</dd>
     </dl>
   </div>

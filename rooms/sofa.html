@@ -114,7 +114,8 @@ td.num { font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-num
 footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); font-size:.85rem; color:var(--faint); }
 
 .tablewrap{overflow-x:auto;margin:0 0 2.5rem;border:1px solid var(--line);border-radius:12px}
-table.score{border-collapse:collapse;width:100%;font-size:.82rem;min-width:1100px}
+table.score{border-collapse:collapse;width:100%;font-size:.82rem;min-width:1340px}
+table.score .fill{min-width:230px;line-height:1.35}
 table.score th[scope=col]{position:sticky;top:0;background:var(--raised);z-index:2;text-align:left;
   font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:.6rem .5rem;
   border-bottom:1px solid var(--line);font-weight:500}
@@ -143,7 +144,7 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
 Всё, что в карточке написано, взято с действующей страницы продавца; где он чего-то не публикует, стоит «не указано», а не моя догадка.</p>
 <p style="color:var(--muted); margin:-1rem 0 1.5rem"><b>Про размер спального места.</b> Всё, что шире 130 см и длиннее 195 см, считается одинаково пригодным — по ширине разница между 140 и 160 на пригодность уже не влияет, и в разборах она не упоминается. А вот длина короче 195 см отмечена в «что проверить»: таких моделей девять.</p>
 <h2>Сводная таблица и баллы</h2>
-<p style="color:var(--muted); margin-bottom:.8rem">Двадцать восемь моделей, отсортированы по сумме баллов. Максимум, который можно набрать по этой шкале, — <b>6,5</b>; набранный максимум — <b>6</b>.
+<p style="color:var(--muted); margin-bottom:.8rem">Двадцать восемь моделей, отсортированы по сумме баллов. Максимум по этой шкале — <b>7</b>; набранный максимум — <b>6</b>.
 Прочерк означает, что продавец параметр не публикует, и балл за него не начисляется.</p>
 <div class="method" style="margin-bottom:1.2rem">
   <h4>Как считались баллы</h4>
@@ -151,9 +152,12 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
   <b>Хранение.</b> 1 балл, если короб или ящик есть; нет или нет данных — 0.<br>
   <b>Обивка.</b> 0,5 балла за плоское плотное плетение — гладкая, структурная, тканая, меланжевая, фактурная: за такую не цепляется коготь.
   Букле, велюр, шенилл, тедди и рубчик — 0: у первых петля вытягивается, у остальных ворс залоснивается.<br>
-  <b>Чехлы и пропитка.</b> 1 балл, если чехлы снимаются <i>или</i> ткань с грязе- и водоотталкивающей обработкой. Достаточно одного из двух.<br>
-  <b>Пена.</b> Общепринятая мерка для сиденья: от 30 кг/м³ — плотность для ежедневного использования, это 1 балл; 25–29 — 0,5; ниже 25 — 0.
-  Где продавец даёт вилку, я брал нижнюю границу.<br>
+  <b>Съёмные чехлы</b> — 0,5 балла. <b>Грязе- и водоотталкивающая обработка</b> — ещё 0,5. Считаются отдельно, так что модель может взять оба.<br>
+  <b>Наполнитель — до 1,5 балла.</b> За плотность пены сиденья: от 30 кг/м³ — 1 балл, это общепринятый уровень для ежедневного использования;
+  25–29 — 0,5; ниже 25 или нет данных — 0. Где продавец даёт вилку, берётся нижняя граница.
+  Плюс <b>0,5 балла за пружины</b> любого типа — карманные, пружинный блок, Nosag, зигзаг, спиральные, волновые.
+  Пена, лежащая прямо на фанере или на эластичных лентах, этого балла не получает: лента растягивается за пару лет, пружина — нет.
+  Карманные и пружинный блок считаются лучше змейки и зигзага, но на балл это не делится — тип видно в самой ячейке.<br>
   <b>Мартиндейл.</b> От 40 000 циклов — уровень «интенсивное бытовое использование», 1 балл; 25 000–39 999 — 0,5; ниже — 0.<br>
   <b>Каркас.</b> 1 балл за массив, фанеру или металл; 0,5 — если к ним подмешаны ДСП, МДФ или ДВП; 0 — если каркас только из плитных материалов или не назван.</p>
 </div>
@@ -161,7 +165,7 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
 <thead><tr>
   <th scope="col">Модель</th><th scope="col">Габариты</th><th scope="col">Спальное место</th>
   <th scope="col">Высота сиденья</th><th scope="col">Хранение</th><th scope="col">Обивка</th>
-  <th scope="col">Съёмные чехлы</th><th scope="col">Антигрязь</th><th scope="col">Пена</th>
+  <th scope="col">Съёмные чехлы</th><th scope="col">Антигрязь</th><th scope="col">Наполнитель</th>
   <th scope="col">Мартиндейл</th><th scope="col">Каркас</th><th scope="col">Оценка</th>
 </tr></thead>
 <tbody>
@@ -172,12 +176,26 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
   <td class="num">40</td>
   <td>есть <span class="p1">1</span></td>
   <td>структурная <span class="ph">0,5</span></td>
-  <td>нет</td>
-  <td>да <span class="p1">1</span></td>
-  <td class="num">30 кг/м³ <span class="p1">1</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td>да <span class="ph">0,5</span></td>
+  <td class="fill">HD- и HR-пена 30 / 30 кг/м³ на зигзаг-пружинах <span class="p1">1,5</span></td>
   <td class="num">100 000 <span class="p1">1</span></td>
   <td>дерево и ДСП <span class="ph">0,5</span></td>
   <td class="tot">6</td>
+</tr>
+<tr>
+  <th scope="row">AX Living CATEA<span class="pr">€ 974,49</span></th>
+  <td class="num">279 × 145 × 84</td>
+  <td class="num">140 × 240 <span class="p1">1</span></td>
+  <td class="num">42</td>
+  <td>есть <span class="p1">1</span></td>
+  <td>структурная <span class="ph">0,5</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="fill">ППУ высокой стойкости 30 кг/м³, пружинный блок и волновые <span class="p1">1,5</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>— <span class="p0">0</span></td>
+  <td class="tot">4</td>
 </tr>
 <tr>
   <th scope="row">RICAPO<span class="pr">€ 899,99</span></th>
@@ -186,25 +204,25 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
   <td class="num">43</td>
   <td>есть <span class="p1">1</span></td>
   <td>шенилл <span class="p0">0</span></td>
-  <td>да</td>
-  <td>нет <span class="p1">1</span></td>
-  <td class="num">35 кг/м³ <span class="p1">1</span></td>
+  <td>да <span class="ph">0,5</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="fill">ППУ высокой стойкости 35 кг/м³ на пружинах Nosag; спинка 30 <span class="p1">1,5</span></td>
   <td class="num">— <span class="p0">0</span></td>
   <td>— <span class="p0">0</span></td>
   <td class="tot">4</td>
 </tr>
 <tr>
-  <th scope="row">Sklum PAOLY<span class="pr">€ 539,95</span></th>
-  <td class="num">210 × 105 × 74</td>
-  <td class="num">190 × 200 <span class="p1">1</span></td>
-  <td class="num">39</td>
+  <th scope="row">ROXELANE<span class="pr">€ 1 300</span></th>
+  <td class="num">258 × 150 × 95</td>
+  <td class="num">132 × 192 <span class="p0">0</span></td>
+  <td class="num">46</td>
+  <td>есть <span class="p1">1</span></td>
+  <td>меланж <span class="ph">0,5</span></td>
   <td>нет <span class="p0">0</span></td>
-  <td>рубчик <span class="p0">0</span></td>
-  <td>да</td>
-  <td>нет <span class="p1">1</span></td>
-  <td class="num">30 кг/м³ <span class="p1">1</span></td>
-  <td class="num">— <span class="p0">0</span></td>
-  <td>нержавеющая сталь <span class="p1">1</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="fill">HR- и HD-пена 25 / 30 кг/м³ на зигзаг-пружинах <span class="p1">1</span></td>
+  <td class="num">50 000 <span class="p1">1</span></td>
+  <td>дерево и ДСП <span class="ph">0,5</span></td>
   <td class="tot">4</td>
 </tr>
 <tr>
@@ -214,26 +232,12 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
   <td class="num">43</td>
   <td>есть <span class="p1">1</span></td>
   <td>букле <span class="p0">0</span></td>
-  <td>нет</td>
   <td>нет <span class="p0">0</span></td>
-  <td class="num">30 кг/м³ <span class="p1">1</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="fill">пена 30 кг/м³, пружин нет <span class="p1">1</span></td>
   <td class="num">30 000 <span class="ph">0,5</span></td>
   <td>бук, ДВП, МДФ <span class="ph">0,5</span></td>
   <td class="tot">4</td>
-</tr>
-<tr>
-  <th scope="row">AX Living CATEA<span class="pr">€ 974,49</span></th>
-  <td class="num">279 × 145 × 84</td>
-  <td class="num">140 × 240 <span class="p1">1</span></td>
-  <td class="num">42</td>
-  <td>есть <span class="p1">1</span></td>
-  <td>структурная <span class="ph">0,5</span></td>
-  <td>нет</td>
-  <td>нет <span class="p0">0</span></td>
-  <td class="num">30 кг/м³ <span class="p1">1</span></td>
-  <td class="num">— <span class="p0">0</span></td>
-  <td>— <span class="p0">0</span></td>
-  <td class="tot">3,5</td>
 </tr>
 <tr>
   <th scope="row">Beliani NUBORG<span class="pr">€ 1 019,99</span></th>
@@ -242,11 +246,25 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
   <td class="num">45</td>
   <td>есть <span class="p1">1</span></td>
   <td>шенилл <span class="p0">0</span></td>
-  <td>да</td>
-  <td>нет <span class="p1">1</span></td>
-  <td class="num">30 кг/м³ <span class="p1">1</span></td>
+  <td>да <span class="ph">0,5</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="fill">пена 30 кг/м³, карманные и Nosag-пружины <span class="p1">1,5</span></td>
   <td class="num">— <span class="p0">0</span></td>
   <td>— <span class="p0">0</span></td>
+  <td class="tot">3,5</td>
+</tr>
+<tr>
+  <th scope="row">DENISE<span class="pr">€ 1 300</span></th>
+  <td class="num">258 × 160 × 83</td>
+  <td class="num">132 × 202 <span class="p0">0</span></td>
+  <td class="num">42</td>
+  <td>есть <span class="p1">1</span></td>
+  <td>структурная <span class="ph">0,5</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="fill">HD- и HR-пена 30 кг/м³ на зигзаг-пружинах; спинка 25 <span class="p1">1,5</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>дерево и ДСП <span class="ph">0,5</span></td>
   <td class="tot">3,5</td>
 </tr>
 <tr>
@@ -256,25 +274,39 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
   <td class="num">43</td>
   <td>есть <span class="p1">1</span></td>
   <td>тканая <span class="ph">0,5</span></td>
-  <td>нет</td>
   <td>нет <span class="p0">0</span></td>
-  <td class="num">— <span class="p0">0</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="fill">не указано <span class="p0">0</span></td>
   <td class="num">— <span class="p0">0</span></td>
   <td>дерево <span class="p1">1</span></td>
   <td class="tot">3,5</td>
 </tr>
 <tr>
-  <th scope="row">ROXELANE<span class="pr">€ 1 300</span></th>
-  <td class="num">258 × 150 × 95</td>
-  <td class="num">132 × 192 <span class="p0">0</span></td>
-  <td class="num">46</td>
-  <td>есть <span class="p1">1</span></td>
-  <td>меланж <span class="ph">0,5</span></td>
-  <td>нет</td>
+  <th scope="row">Sklum PAOLY<span class="pr">€ 539,95</span></th>
+  <td class="num">210 × 105 × 74</td>
+  <td class="num">190 × 200 <span class="p1">1</span></td>
+  <td class="num">39</td>
   <td>нет <span class="p0">0</span></td>
-  <td class="num">25 кг/м³ <span class="ph">0,5</span></td>
-  <td class="num">50 000 <span class="p1">1</span></td>
-  <td>дерево и ДСП <span class="ph">0,5</span></td>
+  <td>рубчик <span class="p0">0</span></td>
+  <td>да <span class="ph">0,5</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="fill">пена 30 кг/м³, пружин нет <span class="p1">1</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>нержавеющая сталь <span class="p1">1</span></td>
+  <td class="tot">3,5</td>
+</tr>
+<tr>
+  <th scope="row">Sklum TAMPERE<span class="pr">€ 879,95</span></th>
+  <td class="num">237 × 98 × 87</td>
+  <td class="num">150 × 237 <span class="p1">1</span></td>
+  <td class="num">45</td>
+  <td>нет <span class="p0">0</span></td>
+  <td>рубчик <span class="p0">0</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="fill">пена 33 кг/м³ на карманных пружинах; спинка 23 <span class="p1">1,5</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>эвкалипт и фанера <span class="p1">1</span></td>
   <td class="tot">3,5</td>
 </tr>
 <tr>
@@ -284,9 +316,9 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
   <td class="num">—</td>
   <td>есть <span class="p1">1</span></td>
   <td>букле <span class="p0">0</span></td>
-  <td>нет</td>
   <td>нет <span class="p0">0</span></td>
-  <td class="num">20 кг/м³ <span class="p0">0</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="fill">пена CertiPUR 20–30 кг/м³, пружин нет <span class="p0">0</span></td>
   <td class="num">50 000 <span class="p1">1</span></td>
   <td>массив, фанера, ДСП <span class="ph">0,5</span></td>
   <td class="tot">3,5</td>
@@ -298,11 +330,25 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
   <td class="num">—</td>
   <td>есть <span class="p1">1</span></td>
   <td>велюр <span class="p0">0</span></td>
-  <td>нет</td>
   <td>нет <span class="p0">0</span></td>
-  <td class="num">20 кг/м³ <span class="p0">0</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="fill">пена CertiPUR 20–30 кг/м³, пружин нет <span class="p0">0</span></td>
   <td class="num">50 000 <span class="p1">1</span></td>
   <td>массив, фанера, ДСП <span class="ph">0,5</span></td>
+  <td class="tot">3,5</td>
+</tr>
+<tr>
+  <th scope="row">Westwing Cucita<span class="pr">€ 2 399</span></th>
+  <td class="num">274 × 164 × 88</td>
+  <td class="num">133 × 195 <span class="p0">0</span></td>
+  <td class="num">55</td>
+  <td>нет <span class="p0">0</span></td>
+  <td>— <span class="p0">0</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="fill">пена и волокно 30 кг/м³ на пружинах Nosag <span class="p1">1,5</span></td>
+  <td class="num">40 000 <span class="p1">1</span></td>
+  <td>массив сосны <span class="p1">1</span></td>
   <td class="tot">3,5</td>
 </tr>
 <tr>
@@ -312,25 +358,25 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
   <td class="num">42</td>
   <td>есть <span class="p1">1</span></td>
   <td>шенилл <span class="p0">0</span></td>
-  <td>нет</td>
-  <td>да <span class="p1">1</span></td>
-  <td class="num">— <span class="p0">0</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td>да <span class="ph">0,5</span></td>
+  <td class="fill">ППУ, плотность не указана, волновые пружины <span class="ph">0,5</span></td>
   <td class="num">— <span class="p0">0</span></td>
   <td>— <span class="p0">0</span></td>
   <td class="tot">3</td>
 </tr>
 <tr>
-  <th scope="row">DENISE<span class="pr">€ 1 300</span></th>
-  <td class="num">258 × 160 × 83</td>
-  <td class="num">132 × 202 <span class="p0">0</span></td>
+  <th scope="row">Kave Home Marela 236<span class="pr">€ 1 695</span></th>
+  <td class="num">236 × 170 × 87</td>
+  <td class="num">140 × 192 <span class="p0">0</span></td>
   <td class="num">42</td>
-  <td>есть <span class="p1">1</span></td>
-  <td>структурная <span class="ph">0,5</span></td>
-  <td>нет</td>
   <td>нет <span class="p0">0</span></td>
-  <td class="num">30 кг/м³ <span class="p1">1</span></td>
+  <td>шенилл <span class="p0">0</span></td>
+  <td>да <span class="ph">0,5</span></td>
+  <td>да <span class="ph">0,5</span></td>
+  <td class="fill">пена 28 кг/м³ на системе NOSAG <span class="p1">1</span></td>
   <td class="num">— <span class="p0">0</span></td>
-  <td>дерево и ДСП <span class="ph">0,5</span></td>
+  <td>дерево FSC <span class="p1">1</span></td>
   <td class="tot">3</td>
 </tr>
 <tr>
@@ -340,40 +386,54 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
   <td class="num">48</td>
   <td>есть <span class="p1">1</span></td>
   <td>гладкая <span class="ph">0,5</span></td>
-  <td>нет</td>
   <td>нет <span class="p0">0</span></td>
-  <td class="num">30 кг/м³ <span class="p1">1</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="fill">HR-пена 30 кг/м³ на эластичных лентах; спинка ППУ 16 <span class="p1">1</span></td>
   <td class="num">— <span class="p0">0</span></td>
   <td>дерево и ДСП <span class="ph">0,5</span></td>
   <td class="tot">3</td>
 </tr>
 <tr>
-  <th scope="row">Sklum TAMPERE<span class="pr">€ 879,95</span></th>
-  <td class="num">237 × 98 × 87</td>
-  <td class="num">150 × 237 <span class="p1">1</span></td>
-  <td class="num">45</td>
+  <th scope="row">Sklum OLEGUER<span class="pr">€ 1 019,95</span></th>
+  <td class="num">215 × 85,5 × 87,5</td>
+  <td class="num">150 × 180 <span class="p0">0</span></td>
+  <td class="num">44</td>
   <td>нет <span class="p0">0</span></td>
-  <td>рубчик <span class="p0">0</span></td>
-  <td>нет</td>
+  <td>гладкая <span class="ph">0,5</span></td>
   <td>нет <span class="p0">0</span></td>
-  <td class="num">33 кг/м³ <span class="p1">1</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="fill">пена 35 кг/м³ на карманных пружинах; подлокотники 24 <span class="p1">1,5</span></td>
   <td class="num">— <span class="p0">0</span></td>
-  <td>эвкалипт и фанера <span class="p1">1</span></td>
+  <td>фанера и эвкалипт <span class="p1">1</span></td>
   <td class="tot">3</td>
 </tr>
 <tr>
-  <th scope="row">Westwing Cucita<span class="pr">€ 2 399</span></th>
-  <td class="num">274 × 164 × 88</td>
-  <td class="num">133 × 195 <span class="p0">0</span></td>
-  <td class="num">55</td>
+  <th scope="row">Westwing Luna<span class="pr">€ 2 599</span></th>
+  <td class="num">270 × 184 × 86</td>
+  <td class="num">140 × 200 <span class="p1">1</span></td>
+  <td class="num">47</td>
   <td>нет <span class="p0">0</span></td>
   <td>— <span class="p0">0</span></td>
-  <td>нет</td>
   <td>нет <span class="p0">0</span></td>
-  <td class="num">30 кг/м³ <span class="p1">1</span></td>
-  <td class="num">40 000 <span class="p1">1</span></td>
-  <td>массив сосны <span class="p1">1</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="fill">пена 21 кг/м³ на пружинах Nosag <span class="ph">0,5</span></td>
+  <td class="num">80 000 <span class="p1">1</span></td>
+  <td>массив бука, фанера, ДВП <span class="ph">0,5</span></td>
   <td class="tot">3</td>
+</tr>
+<tr>
+  <th scope="row">Beliani KARILA<span class="pr">€ 919,99</span></th>
+  <td class="num">250 × 150 × 85</td>
+  <td class="num">130 × 204 <span class="p0">0</span></td>
+  <td class="num">45</td>
+  <td>есть <span class="p1">1</span></td>
+  <td>— <span class="p0">0</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="fill">ППУ 20 / 22 кг/м³ на карманных пружинах <span class="ph">0,5</span></td>
+  <td class="num">— <span class="p0">0</span></td>
+  <td>эвкалипт и фанера <span class="p1">1</span></td>
+  <td class="tot">2,5</td>
 </tr>
 <tr>
   <th scope="row">ISSORO express<span class="pr">€ 1 299,99</span></th>
@@ -382,25 +442,11 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
   <td class="num">54</td>
   <td>есть <span class="p1">1</span></td>
   <td>тедди <span class="p0">0</span></td>
-  <td>нет</td>
   <td>нет <span class="p0">0</span></td>
-  <td class="num">25 кг/м³ <span class="ph">0,5</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="fill">ППУ 25 кг/м³ на перекрёстных лентах; спинка 18 <span class="ph">0,5</span></td>
   <td class="num">— <span class="p0">0</span></td>
   <td>дерево <span class="p1">1</span></td>
-  <td class="tot">2,5</td>
-</tr>
-<tr>
-  <th scope="row">Kave Home Marela 236<span class="pr">€ 1 695</span></th>
-  <td class="num">236 × 170 × 87</td>
-  <td class="num">140 × 192 <span class="p0">0</span></td>
-  <td class="num">42</td>
-  <td>нет <span class="p0">0</span></td>
-  <td>шенилл <span class="p0">0</span></td>
-  <td>да</td>
-  <td>да <span class="p1">1</span></td>
-  <td class="num">28 кг/м³ <span class="ph">0,5</span></td>
-  <td class="num">— <span class="p0">0</span></td>
-  <td>дерево FSC <span class="p1">1</span></td>
   <td class="tot">2,5</td>
 </tr>
 <tr>
@@ -410,54 +456,12 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
   <td class="num">53</td>
   <td>нет <span class="p0">0</span></td>
   <td>фактурная <span class="ph">0,5</span></td>
-  <td>нет</td>
   <td>нет <span class="p0">0</span></td>
-  <td class="num">30 кг/м³ <span class="p1">1</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="fill">ППУ 30 кг/м³ на перекрёстных лентах; спинка 25 <span class="p1">1</span></td>
   <td class="num">— <span class="p0">0</span></td>
   <td>дерево и металл <span class="p1">1</span></td>
   <td class="tot">2,5</td>
-</tr>
-<tr>
-  <th scope="row">Sklum OLEGUER<span class="pr">€ 1 019,95</span></th>
-  <td class="num">215 × 85,5 × 87,5</td>
-  <td class="num">150 × 180 <span class="p0">0</span></td>
-  <td class="num">44</td>
-  <td>нет <span class="p0">0</span></td>
-  <td>гладкая <span class="ph">0,5</span></td>
-  <td>нет</td>
-  <td>нет <span class="p0">0</span></td>
-  <td class="num">35 кг/м³ <span class="p1">1</span></td>
-  <td class="num">— <span class="p0">0</span></td>
-  <td>фанера и эвкалипт <span class="p1">1</span></td>
-  <td class="tot">2,5</td>
-</tr>
-<tr>
-  <th scope="row">Westwing Luna<span class="pr">€ 2 599</span></th>
-  <td class="num">270 × 184 × 86</td>
-  <td class="num">140 × 200 <span class="p1">1</span></td>
-  <td class="num">47</td>
-  <td>нет <span class="p0">0</span></td>
-  <td>— <span class="p0">0</span></td>
-  <td>нет</td>
-  <td>нет <span class="p0">0</span></td>
-  <td class="num">21 кг/м³ <span class="p0">0</span></td>
-  <td class="num">80 000 <span class="p1">1</span></td>
-  <td>массив бука, фанера, ДВП <span class="ph">0,5</span></td>
-  <td class="tot">2,5</td>
-</tr>
-<tr>
-  <th scope="row">Beliani KARILA<span class="pr">€ 919,99</span></th>
-  <td class="num">250 × 150 × 85</td>
-  <td class="num">130 × 204 <span class="p0">0</span></td>
-  <td class="num">45</td>
-  <td>есть <span class="p1">1</span></td>
-  <td>— <span class="p0">0</span></td>
-  <td>нет</td>
-  <td>нет <span class="p0">0</span></td>
-  <td class="num">22 кг/м³ <span class="p0">0</span></td>
-  <td class="num">— <span class="p0">0</span></td>
-  <td>эвкалипт и фанера <span class="p1">1</span></td>
-  <td class="tot">2</td>
 </tr>
 <tr>
   <th scope="row">CATONO<span class="pr">€ 649,99</span></th>
@@ -466,9 +470,9 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
   <td class="num">40</td>
   <td>нет <span class="p0">0</span></td>
   <td>букле <span class="p0">0</span></td>
-  <td>да</td>
-  <td>нет <span class="p1">1</span></td>
-  <td class="num">30 кг/м³ <span class="p1">1</span></td>
+  <td>да <span class="ph">0,5</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="fill">ППУ высокой стойкости 30 кг/м³ на спиральных пружинах <span class="p1">1,5</span></td>
   <td class="num">— <span class="p0">0</span></td>
   <td>— <span class="p0">0</span></td>
   <td class="tot">2</td>
@@ -480,9 +484,9 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
   <td class="num">—</td>
   <td>есть <span class="p1">1</span></td>
   <td>— <span class="p0">0</span></td>
-  <td>нет</td>
   <td>нет <span class="p0">0</span></td>
-  <td class="num">— <span class="p0">0</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="fill">ППУ, плотность не указана <span class="p0">0</span></td>
   <td class="num">— <span class="p0">0</span></td>
   <td>железо и массив <span class="p1">1</span></td>
   <td class="tot">2</td>
@@ -494,9 +498,9 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
   <td class="num">49</td>
   <td>есть <span class="p1">1</span></td>
   <td>велюр <span class="p0">0</span></td>
-  <td>нет</td>
   <td>нет <span class="p0">0</span></td>
-  <td class="num">— <span class="p0">0</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="fill">не указано <span class="p0">0</span></td>
   <td class="num">— <span class="p0">0</span></td>
   <td>ДВП <span class="p0">0</span></td>
   <td class="tot">1,5</td>
@@ -508,9 +512,9 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
   <td class="num">47</td>
   <td>есть <span class="p1">1</span></td>
   <td>меланж <span class="ph">0,5</span></td>
-  <td>нет</td>
   <td>нет <span class="p0">0</span></td>
-  <td class="num">— <span class="p0">0</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="fill">не указано <span class="p0">0</span></td>
   <td class="num">— <span class="p0">0</span></td>
   <td>— <span class="p0">0</span></td>
   <td class="tot">1,5</td>
@@ -522,9 +526,9 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
   <td class="num">45</td>
   <td>нет <span class="p0">0</span></td>
   <td>велюр <span class="p0">0</span></td>
-  <td>нет</td>
   <td>нет <span class="p0">0</span></td>
-  <td class="num">— <span class="p0">0</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="fill">не указано; матрас Dunlopillo <span class="p0">0</span></td>
   <td class="num">— <span class="p0">0</span></td>
   <td>дерево <span class="p1">1</span></td>
   <td class="tot">1</td>
@@ -536,12 +540,12 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
   <td class="num">43,5</td>
   <td>нет <span class="p0">0</span></td>
   <td>велюр <span class="p0">0</span></td>
-  <td>нет</td>
   <td>нет <span class="p0">0</span></td>
-  <td class="num">28 кг/м³ <span class="ph">0,5</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="fill">пена 28–40 кг/м³ на карманных пружинах <span class="p1">1</span></td>
   <td class="num">— <span class="p0">0</span></td>
   <td>— <span class="p0">0</span></td>
-  <td class="tot">0,5</td>
+  <td class="tot">1</td>
 </tr>
 <tr>
   <th scope="row">Furni MERLOT<span class="pr">€ 1 819,93</span></th>
@@ -550,9 +554,9 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
   <td class="num">—</td>
   <td>нет <span class="p0">0</span></td>
   <td>— <span class="p0">0</span></td>
-  <td>нет</td>
   <td>нет <span class="p0">0</span></td>
-  <td class="num">— <span class="p0">0</span></td>
+  <td>нет <span class="p0">0</span></td>
+  <td class="fill">пена HR, плотность не указана <span class="p0">0</span></td>
   <td class="num">— <span class="p0">0</span></td>
   <td>— <span class="p0">0</span></td>
   <td class="tot">0</td>
@@ -587,7 +591,7 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
   <div class="prosecons">
     <div class="pros"><h4>Чем хорош</h4><p><b>Чехлы съёмные на молниях, причём со всего — со спинки, подлокотников и каркаса.</b>
     Во всём списке это лучшая ситуация с уходом: остальные либо не снимаются вовсе, либо снимаются только с подушек спинки.
-    <b>Каркас из нержавеющей стали</b> — единственный металлический здесь, не ДСП и не МДФ. Пена 30 кг/м³.
+    <b>Каркас из нержавеющей стали</b> — единственный цельнометаллический здесь, не ДСП и не МДФ. Пена 30 кг/м³.
     <b>Ложе 190 × 200 — самое большое во всём списке</b>, больше даже Ladina со 180 × 200, и это при габарите дивана всего 210 см. Такое даёт механизм-гармошка: раскладывается вперёд целиком, без стыков и провалов посередине. <b>Одна коробка 109 × 60 × 48 см</b>: заносится в лифт и по лестнице без проблем, в отличие от моделей весом 139 кг.</p></div>
     <div class="cons"><h4>Что проверить</h4><p><b>Это рубчик.</b> В названии стоит «fluwelen», но в характеристиках и во всех трёх
     цветах — corduroy: Leger Groen, Kameelbruin и Beige – linnen. Вы просили рубчик из списка убрать, так что решение за вами.
@@ -620,8 +624,8 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
   </div>
 
   <div class="prosecons">
-    <div class="pros"><h4>Чем хорош</h4><p>Самый дешёвый в списке и при этом с коробом для белья. Каркас продавец описывает как железо плюс массив дерева — сочетание жёстче, чем ДСП, которое стоит у большинства в этой цене. Древесина сертифицирована PEFC. Угол переставляется слева направо, то есть планировку можно поменять после покупки.</p></div>
-    <div class="cons"><h4>Что проверить</h4><p><b>Данных меньше всего из девятнадцати.</b> Vente-Unique не публикует ни плотность пены, ни Мартиндейл, ни размер спального места — две из трёх цифр так и остались неизвестны, ложе 190 × 120 вы сняли с фотографии сами. <b>И это единственная модель, где ложе не проходит по обоим порогам:</b> 120 см ширины против 130 и 190 длины против 195. Нагрузка 150 кг — самая низкая здесь, у остальных 330–450. Вес всего 73,8 кг при длине 219,5 см: лёгкий каркас обычно означает тонкий профиль и меньше наполнителя. Сборка своими руками.</p></div>
+    <div class="pros"><h4>Чем хорош</h4><p>Второй по дешевизне в списке и при этом с коробом для белья. Каркас продавец описывает как железо плюс массив дерева — сочетание жёстче, чем ДСП, которое стоит у большинства в этой цене. Древесина сертифицирована PEFC. Угол переставляется слева направо, то есть планировку можно поменять после покупки.</p></div>
+    <div class="cons"><h4>Что проверить</h4><p><b>Данных меньше всего из девятнадцати.</b> Vente-Unique не публикует ни плотность пены, ни Мартиндейл, ни размер спального места — две из трёх цифр так и остались неизвестны, ложе 190 × 120 вы сняли с фотографии сами. <b>И это единственная модель, где ложе не проходит по обоим порогам:</b> 120 см ширины против 130 и 190 длины против 195. Нагрузка 150 кг — одна из самых низких здесь, у большинства 330–450. Вес всего 73,8 кг при длине 219,5 см: лёгкий каркас обычно означает тонкий профиль и меньше наполнителя. Сборка своими руками.</p></div>
   </div>
 </article>
 <article class="card">
@@ -679,7 +683,7 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
 
   <div class="prosecons">
     <div class="pros"><h4>Чем хорош</h4><p>Пена сиденья 30 кг/м³ на <b>спиральных пружинах</b> — не поролон на фанере, а полноценная пружинная база. Чехол спинки съёмный, это упрощает уход. Нагрузка 330 кг. Поставляется в сжатом виде, легче занести в квартиру.</p></div>
-    <div class="cons"><h4>Что проверить</h4><p><b>Механизм — «Oprolmatras», скатывающийся матрас, и продавец пишет «без основания» (zonder bedbodem).</b> Это значит, что спишь фактически на сложенном сиденье, без отдельной решётки. Для регулярного сна это слабое место. Мартиндейл не опубликован. <b>Длина ложа 184 см</b> — самая короткая в списке, ощутимо меньше 195.</p></div>
+    <div class="cons"><h4>Что проверить</h4><p><b>Механизм — «Oprolmatras», скатывающийся матрас, и продавец пишет «без основания» (zonder bedbodem).</b> Это значит, что спишь фактически на сложенном сиденье, без отдельной решётки. Для регулярного сна это слабое место. Мартиндейл не опубликован. <b>Длина ложа 184 см</b> — одна из самых коротких здесь, ощутимо меньше 195.</p></div>
   </div>
 </article>
 <article class="card">
@@ -735,7 +739,7 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
   </div>
 
   <div class="prosecons">
-    <div class="pros"><h4>Чем хорош</h4><p><b>Лучшая пена сиденья во всём списке — 35 кг/м³</b>, на пружинах Nosag; спинка 30, матрас 30. Это единственная модель, где все три числа на уровне «ежедневное с запасом». <b>Два короба</b> для белья вместо одного. Чехлы спинки и дополнительных подушек съёмные. Нагрузка 440 кг — вторая по величине здесь.</p></div>
+    <div class="pros"><h4>Чем хорош</h4><p><b>Лучшая пена сиденья в списке — 35 кг/м³, вровень с OLEGUER</b>, на пружинах Nosag; спинка 30, матрас 30. Это единственная модель, где все три числа на уровне «ежедневное с запасом». <b>Два короба</b> для белья вместо одного. Чехлы спинки и дополнительных подушек съёмные. Нагрузка 440 кг — вторая по величине здесь.</p></div>
     <div class="cons"><h4>Что проверить</h4><p>Мартиндейла нет. Ложе 160 × 202 продавец публикует полями «Slaapafmentingen» и «Slaap lengte» — я их пропустил при первом проходе, нашли вы. Ширина 266 см: под стену зала надо мерить.</p></div>
   </div>
 </article>
@@ -767,7 +771,7 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
 
   <div class="prosecons">
     <div class="pros"><h4>Чем хорош</h4><p><b>В сиденье карманные пружины</b> («Constructie zitting: Pocketvering»), а не только пена — это меняет дело: низкие 20/22 кг/м³ работают как верхний слой поверх пружинного блока, а не как единственная опора. Цвет продавец прямо называет Taupe. Короб есть, подлокотник 69 см, угол левый.</p></div>
-    <div class="cons"><h4>Что проверить</h4><p><b>20 / 22 кг/м³ — всё равно самые низкие цифры в списке</b>, и продавец не расшифровывает, какая из двух относится к сиденью. Уход: в инструкции только сухая чистка шампунем — <b>мокрая уборка пятен не предусмотрена</b>, при коте и младенце это существенно. Нагрузка 100 кг на место — низкая. Отдельного поля «спальное место» нет, 204 × 130 я вывел из их же цифр. <b>130 см — ровно нижняя граница</b>, запаса по ширине нет.</p></div>
+    <div class="cons"><h4>Что проверить</h4><p><b>20 / 22 кг/м³ — всё равно в самом низу по плотности</b>, и продавец не расшифровывает, какая из двух относится к сиденью. Уход: в инструкции только сухая чистка шампунем — <b>мокрая уборка пятен не предусмотрена</b>, при коте и младенце это существенно. Нагрузка 100 кг на место — низкая. Отдельного поля «спальное место» нет, 204 × 130 я вывел из их же цифр. <b>130 см — ровно нижняя граница</b>, запаса по ширине нет.</p></div>
   </div>
 </article>
 <article class="card">
@@ -796,7 +800,7 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
 
   <div class="prosecons">
     <div class="pros"><h4>Чем хорош</h4><p><b>Пружинный блок плюс волновые пружины</b> и ламельное основание под матрасом — по конструкции это ближе к кровати, чем к дивану. Пена сиденья 30 кг/м³. Короб («bedkist») есть. <b>Спальное место опубликовано: 240 × 140.</b> Древесина PEFC, ткань OEKO-TEX.</p></div>
-    <div class="cons"><h4>Что проверить</h4><p>Длина 279 см — самая большая в списке, под зал надо мерить стену. Мартиндейл не указан. Сборка своими руками.</p></div>
+    <div class="cons"><h4>Что проверить</h4><p>Длина 279 см — одна из самых больших здесь, под зал надо мерить стену. Мартиндейл не указан. Сборка своими руками.</p></div>
   </div>
 </article>
 <article class="card">
@@ -824,7 +828,7 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
   </div>
 
   <div class="prosecons">
-    <div class="pros"><h4>Чем хорош</h4><p><b>Мартиндейл 100 000 циклов — лучший показатель во всём списке</b>, и это единственная модель здесь с <b>водоотталкивающей тканью</b>. Плюс антипиллинг и разрывостойкость. Пены 30/30 в сиденье, 30 в спинке — ровно, без слабого звена. Нагрузка 350 кг, вес 139 кг, короб есть.</p></div>
+    <div class="pros"><h4>Чем хорош</h4><p><b>Мартиндейл 100 000 циклов — лучший показатель во всём списке</b>, и одна из двух моделей здесь с <b>водоотталкивающей тканью</b> — вторая Carnos. Плюс антипиллинг и разрывостойкость. Пены 30/30 в сиденье, 30 в спинке — ровно, без слабого звена. Нагрузка 350 кг, вес 139 кг, короб есть.</p></div>
     <div class="cons"><h4>Что проверить</h4><p><b>Ширина ложа расходится:</b> в спецификации 156 см, а вы по фотографии прочитали 134. Похоже, 156 — это по выступу кушетки, а 134 — рабочая ширина в узком месте; оба значения выше порога в 130, так что на пригодность это не влияет — но знать полезно. <b>Плюс продавец помечает её как кровать для эпизодического сна</b> («Soort bed: Incidenteel»), а не ежедневного — при том что MONACO у того же Bobochic помечена как ежедневная. Подлокотники 20/30 кг/м³ — самая мягкая часть. Сборка своими руками, 139 кг.</p></div>
   </div>
 </article>
@@ -848,7 +852,7 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
       <dt>Сиденье</dt><dd>высота 43 см, глубина 60 см</dd>
       <dt>Съёмные чехлы</dt><dd><span class="na">не указано</span></dd>
       <dt>Хранение</dt><dd>есть</dd>
-      <dt>Что пишет продавец</dt><dd>Самый дешёвый из шести и самый длинный: 254 см. Четыре места по счёту продавца, подлокотник 27 см, глубина сиденья 60 см. <b>Короб для белья есть.</b> Цвет продавец называет коричневым, а не таупе — смотреть вживую.</dd>
+      <dt>Что пишет продавец</dt><dd>Самый длинный из прямых: 254 см. Четыре места по счёту продавца, подлокотник 27 см, глубина сиденья 60 см. <b>Короб для белья есть.</b> Цвет продавец называет коричневым, а не таупе — смотреть вживую.</dd>
     </dl>
   </div>
 
@@ -877,13 +881,13 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
       <dt>Сиденье</dt><dd>высота 43,5 см, глубина 64 см</dd>
       <dt>Съёмные чехлы</dt><dd>нет<br><span class="sub">продавец пишет «afneembare hoes: nee»</span></dd>
       <dt>Хранение</dt><dd><span class="na">не указано</span></dd>
-      <dt>Что пишет продавец</dt><dd>Четыре места, высота сиденья 43,5 см — низкая. <b>Чехол съёмный</b>, это единственная из шести с таким. В комплекте декоративные подушки. Скидка 59% от прежней цены 3.099.</dd>
+      <dt>Что пишет продавец</dt><dd>Четыре места, высота сиденья 43,5 см — низкая. В комплекте декоративные подушки. Скидка 59% от прежней цены 3.099.</dd>
     </dl>
   </div>
 
   <div class="prosecons">
     <div class="pros"><h4>Чем хорош</h4><p><b>Карманные пружины плюс пена 28–40 кг/м³</b> — верхняя граница выше, чем у кого-либо здесь. <b>Спальное место опубликовано: 140 × 190.</b> Высота сиденья 43,5 см, вес 89 кг, гарантия 2 года. Продавец прямо пишет, что кровать рассчитана на ежедневное использование.</p></div>
-    <div class="cons"><h4>Что проверить</h4><p><b>Чехол не съёмный</b> — продавец указывает «afneembare hoes: nee». Всё чистится только на месте. Мартиндейл не публикуется. <b>Длина ложа 190 см</b> — короче 195, для роста выше среднего это на грани. Ширина дивана 240 см.</p></div>
+    <div class="cons"><h4>Что проверить</h4><p><b>Чехол не съёмный</b> — продавец указывает «afneembare hoes: nee». Всё чистится только на месте, снять и постирать нельзя. Мартиндейл не публикуется. <b>Длина ложа 190 см</b> — короче 195, для роста выше среднего это на грани. Ширина дивана 240 см.</p></div>
   </div>
 </article>
 <article class="card">
@@ -911,7 +915,7 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
   </div>
 
   <div class="prosecons">
-    <div class="pros"><h4>Чем хорош</h4><p><b>Матрас памяти 20 см толщиной на металлическом основании</b> — единственная здесь пара «настоящее основание + толстый матрас» в этой цене. Продавец помечает как <b>ежедневный сон</b> («Dagelijks slaapgebruik»). Спальное 140 × 192 опубликовано. Механизм express: раскладывается не снимая подушек. Короб есть. Сделано в Италии.</p></div>
+    <div class="pros"><h4>Чем хорош</h4><p><b>Матрас 20 см толщиной на металлическом основании</b> — вместе с POGNIA это единственная здесь пара «настоящее основание плюс толстый матрас». Продавец помечает как <b>ежедневный сон</b> («Dagelijks slaapgebruik»). Спальное 140 × 192 опубликовано. Механизм express: раскладывается не снимая подушек. Короб есть. Сделано в Италии.</p></div>
     <div class="cons"><h4>Что проверить</h4><p><b>Пены низкие: сиденье 25, спинка 18 кг/м³</b>, и матрас 25 — при ежедневном использовании это главный риск. Пружины сиденья — перекрёстные эластичные ленты, а не змейка и не пружинный блок. Мартиндейл не указан. <b>Длина ложа 192 см</b> — короче 195, для роста выше среднего это на грани.</p></div>
   </div>
 </article>
@@ -1170,7 +1174,7 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
     </dl>
   </div>
   <div class="prosecons">
-    <div class="pros"><h4>Чем хорош</h4><p><b>Публикует размеры короба — 119 × 67 × 15 см</b>, а это редкость: почти никто не пишет, сколько в него реально влезет. Пена 30 кг/м³. <b>Ножки 15 см</b> — под ними проходит робот-пылесос, и низ дивана не копит пыль. Чехлы спинных подушек снимаются. Ложе 139 × 228 — самое длинное в списке.</p></div>
+    <div class="pros"><h4>Чем хорош</h4><p><b>Публикует размеры короба — 119 × 67 × 15 см</b>, а это редкость: почти никто не пишет, сколько в него реально влезет. Пена 30 кг/м³. <b>Ножки 15 см</b> — под ними проходит робот-пылесос, и низ дивана не копит пыль. Чехлы спинных подушек снимаются. Ложе 139 × 228 — одно из самых длинных здесь.</p></div>
     <div class="cons"><h4>Что проверить</h4><p>Габарит 277 см в длину и 168 в глубину — под зал надо мерить стену и проход. Мартиндейл не опубликован. Плотность дана одним числом, без разбивки на сиденье и спинку. Сборка частичная.</p></div>
   </div>
 </article>
@@ -1228,7 +1232,7 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
 
   <div class="prosecons">
     <div class="pros"><h4>Чем хорош</h4><p><b>Единственная модель с противопятновой обработкой ткани</b> — Kave Home пишет об этом прямо, и при коте и младенце это весомее любой другой цифры здесь. Пена 28 кг/м³ на системе NOSAG. <b>Механизм Y-open, синхронизированный</b>: раскладывается одним движением, а не в два приёма. Чехлы спинных подушек съёмные. Каркас FSC, нагрузка 450 кг.</p></div>
-    <div class="cons"><h4>Что проверить</h4><p>Самая дорогая в списке. Мартиндейл не опубликован. Хранения нет. <b>Длина ложа 192 см</b> — короче 195, для роста выше среднего это на грани. Приходит в двух коробках, вторая 73 кг — заносить вдвоём.</p></div>
+    <div class="cons"><h4>Что проверить</h4><p>Мартиндейл не опубликован. Хранения нет. <b>Длина ложа 192 см</b> — короче 195, для роста выше среднего это на грани. Приходит в двух коробках, вторая 73 кг — заносить вдвоём.</p></div>
   </div>
 </article><article class="card">
   <div class="card-head">
@@ -1317,8 +1321,8 @@ table.score .tot{font-family:"IBM Plex Mono",monospace;font-size:1.05rem;font-we
     </dl>
   </div>
   <div class="prosecons">
-    <div class="pros"><h4>Чем хорош</h4><p><b>Ложе 180 × 200 — самое широкое во всём списке</b>, на 20 см шире следующей за ней. <b>Гарантия 10 лет</b>, как у Tasha. Пена 30 кг/м³. Короб есть, а кровать собирается перестановкой пуфа — то есть механизма, который может заклинить, тут просто нет.</p></div>
-    <div class="cons"><h4>Что проверить</h4><p><b>Мартиндейл всего 30 000</b> — при этом ткань букле, а букле цепляется за когти. Габарит <b>280 × 210 см</b> — самый большой в списке, под зал надо мерить оба размера. Ножки пластиковые, 3 см. Нагрузка 150 кг на модуль — низкая. Сиденье 43 см, ниже обычного.</p></div>
+    <div class="pros"><h4>Чем хорош</h4><p><b>Ложе 180 × 200</b> — второе по ширине в списке, шире только PAOLY со 190. <b>Гарантия 10 лет</b>, как у Tasha. Пена 30 кг/м³. Короб есть, а кровать собирается перестановкой пуфа — то есть механизма, который может заклинить, тут просто нет.</p></div>
+    <div class="cons"><h4>Что проверить</h4><p><b>Мартиндейл всего 30 000</b> — при этом ткань букле, а букле цепляется за когти. Габарит <b>280 × 210 см</b> — самый глубокий в списке, под зал надо мерить оба размера. Ножки пластиковые, 3 см. Нагрузка 150 кг на модуль — низкая. Сиденье 43 см, ниже обычного.</p></div>
   </div>
 </article>
 <article class="card">
